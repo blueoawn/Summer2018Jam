@@ -11,4 +11,10 @@ public class Party : MonoBehaviour {
 	public GameObject PartyLeader() {
 		return PartyMembers[leaderIndex];
 	}
+
+  public void Update() {
+    if (Input.GetKeyDown("tab")) {
+      leaderIndex = (leaderIndex + 1) % PartyMembers.Count;
+    }
+  }
 }
