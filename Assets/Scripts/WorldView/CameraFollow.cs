@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour {
 
-  public Vector3 Offset;
-  public Party Party;
+  public Vector3 offset;
+  public Party party;
 
   public void Update() {
-    GameObject partyLeader = Party.PartyLeader();
-    transform.position = partyLeader.transform.position + Offset;
+    GameObject partyLeader = party.PartyLeader();
+    transform.position = partyLeader.transform.position + offset;
     transform.LookAt(partyLeader.transform);
   }
 

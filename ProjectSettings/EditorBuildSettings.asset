@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/PathfindingTesting.unity
+    guid: 1a82fa05ac714df4db0fdadbdf9b6231
+  - enabled: 1
+    path: Assets/Scenes/BattleModeTesting.unity
+    guid: a7a3c4477863c6d4c99139bd75fbdf45
   m_configObjects: {}
