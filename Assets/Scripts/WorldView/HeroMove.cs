@@ -15,6 +15,8 @@ public class HeroMove : MonoBehaviour {
 		navMeshAgent = GetComponent<NavMeshAgent>();
 		partyMember = GetComponent<PartyMember>();
 	}
+
+  public Vector3 FollowOffset;
 	
 	public void Update () {
 		if (partyMember.IsPartyLeader()) {
@@ -27,7 +29,7 @@ public class HeroMove : MonoBehaviour {
 			}
 		} else {
 			if (Vector3.Distance(transform.position, partyMember.Party.PartyLeader().transform.position) > FollowSpacing)
-				navMeshAgent.SetDestination(partyMember.Party.PartyLeader().transform.position);
+				navMeshAgent.SetDestination(partyMember.Party.PartyLeader().transform.position + FollowOffset);
 			else {
 				navMeshAgent.SetDestination(transform.position);
 				
