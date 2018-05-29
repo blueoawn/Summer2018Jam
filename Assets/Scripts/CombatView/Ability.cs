@@ -20,6 +20,10 @@ public class Ability : MonoBehaviour {
     public GameObject effectApplied;
     public float effectApplyChance;
 
+    public void Use(GameObject target) {
+        target.GetComponent<Combat>().TakeDamage(baseDamage);
+    }
+
 
 }
 
