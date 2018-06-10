@@ -26,17 +26,19 @@ public class Ability : MonoBehaviour {
 
     public void Use(GameObject target) {
         Debug.Log("Use Ability");
-        target.GetComponent<Combat>().TakeDamage(baseDamage);
-        /* switch (type) { */
-        /*   case AbilityType.Projectile: */
-        /*     useProjectile(target); */
-        /*     break; */
-        /* } */
+        switch (type) {
+          case AbilityType.Projectile:
+            useProjectile(target);
+            break;
+          default:
+            target.GetComponent<Combat>().TakeDamage(baseDamage);
+            break;
+        }
     }
 
     private void useProjectile(GameObject target) {
-        GameObject projectileInstance = Instantiate(projectilePrefab) as GameObject; 
-        projectileInstance.GetComponent<Projectile>().SetTarget(target);
+        GameObject projectileInstance = Instantiate(projectilePrefab, transform.position, Quaternion.identity) as GameObject; 
+        projectileInstance.GetComponent<Projectile>().Fire(target, baseDamage);
     }
 
 

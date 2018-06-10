@@ -44,8 +44,8 @@ public class UnitPlacer : MonoBehaviour {
         }
         i = 0;
         foreach (Transform enemy in enemies.GetComponentsInChildren<Transform>()) {
-            /* enemy.position = enemySlots[i % enemySlots.Length].position; */
-            /* enemy.transform.Find("UnitWorldUI").position = Vector3.zero; */
+            enemy.position = enemySlots[i % enemySlots.Length].position;
+            enemy.transform.Find("UnitWorldUI").position = Vector3.zero;
             i++;
         }
 

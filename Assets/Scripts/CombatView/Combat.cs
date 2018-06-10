@@ -22,7 +22,7 @@ public class Combat : MonoBehaviour {
         currentSP = maxSP;
         if (abilityPrefab) {
             abilityInstance = Instantiate(abilityPrefab) as GameObject;
-            abilityInstance.transform.SetParent(transform);
+            abilityInstance.transform.SetParent(transform, false);
         }
         updateHealthBar();
     }
